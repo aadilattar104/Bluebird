@@ -115,7 +115,7 @@ export function PricingSection() {
         "Performance comparison",
       ],
       buttonText: "Buy Test Series",
-      buttonVariant: "outline" as const,
+      buttonVariant: "default" as const,
       highlighted: false,
       href: "/register",
     },

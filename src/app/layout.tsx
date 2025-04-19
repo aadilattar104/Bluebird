@@ -14,7 +14,7 @@ export default function RootLayout({
         <meta name="description" content="Comprehensive mock tests and practice questions for aviation professionals" />
       </head>
       <body>
-       
+       {children}
       </body>
     </html>
   );

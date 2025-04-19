@@ -43,7 +43,7 @@ export function CTASection() {
           </div>
           <div className="flex flex-col gap-2 min-[400px]:flex-row">
             <div ref={primaryBtnRef}>
-              <Button size="lg" className="bg-black text-primary hover:bg-white/90 relative z-10" asChild>
+              <Button size="lg" className="bg-white text-primary hover:bg-white/10 relative z-10" asChild>
                 <Link href="/register">Get Started Now</Link>
               </Button>
             </div>
