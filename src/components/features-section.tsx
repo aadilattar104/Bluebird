@@ -2,35 +2,23 @@
 
 import type React from "react"
 
-import { useRef } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { BookOpen, Clock, BarChart3, Plane, Shield, Users } from "lucide-react"
-import { motion, useInView } from "framer-motion"
 
 interface FeatureCardProps {
   icon: React.ReactNode
   title: string
   description: string
-  index: number
 }
 
-function FeatureCard({ icon, title, description, index }: FeatureCardProps) {
+function FeatureCard({ icon, title, description }: FeatureCardProps) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      viewport={{ once: true }}
-      whileHover={{ y: -10, transition: { duration: 0.3 } }}
-    >
+    <div>
       <Card className="h-full">
         <CardHeader className="flex flex-row items-center gap-4">
-          <motion.div
-            whileHover={{ rotate: 5, scale: 1.1 }}
-            transition={{ type: "spring", stiffness: 400, damping: 10 }}
-          >
+          <div>
             {icon}
-          </motion.div>
+          </div>
           <div className="grid gap-1">
             <CardTitle>{title}</CardTitle>
           </div>
@@ -39,53 +27,49 @@ function FeatureCard({ icon, title, description, index }: FeatureCardProps) {
           <p>{description}</p>
         </CardContent>
       </Card>
-    </motion.div>
+    </div>
   )
 }
 
 export function FeaturesSection() {
-  const sectionRef = useRef(null)
-  const isInView = useInView(sectionRef, { once: false, amount: 0.1 })
-
   const features = [
     {
-      icon: <BookOpen className="h-8 w-8 text-primary" />,
+      icon: <BookOpen className="h-8 w-8 " />,
       title: "Comprehensive Question Bank",
       description: "Access thousands of MCQs across 13 subject categories with detailed explanations.",
     },
     {
-      icon: <Clock className="h-8 w-8 text-primary" />,
+      icon: <Clock className="h-8 w-8 " />,
       title: "Practice & Mock Tests",
       description:
         "Subject-specific practice with immediate feedback and timed mock tests that simulate exam conditions.",
     },
     {
-      icon: <BarChart3 className="h-8 w-8 text-primary" />,
+      icon: <BarChart3 className="h-8 w-8 " />,
       title: "Progress Tracking",
       description: "Monitor your performance with detailed analytics and identify areas for improvement.",
     },
     {
-      icon: <Plane className="h-8 w-8 text-primary" />,
+      icon: <Plane className="h-8 w-8 " />,
       title: "Aircraft-Specific Content",
       description: "Starting with Boeing 737 Max, with plans to expand to Airbus A320 and other aircraft.",
     },
     {
-      icon: <Shield className="h-8 w-8 text-primary" />,
+      icon: <Shield className="h-8 w-8 " />,
       title: "Secure Platform",
       description:
         "Encrypted data, secure authentication, and anti-cheating measures to protect the integrity of your learning.",
     },
     {
-      icon: <Users className="h-8 w-8 text-primary" />,
+      icon: <Users className="h-8 w-8 " />,
       title: "Easy Registration",
       description: "Quick sign-up with email + OTP or Google authentication. No manual approvals needed.",
     },
   ]
 
   return (
-    <section ref={sectionRef} className="w-full py-12 md:py-24 lg:py-32 bg-white" id="features">
+    <section className="w-full py-12 md:py-24 lg:py-32" id="features">
       <div className="container px-4 md:px-6">
-        {/* Removed motion div wrapper and its animation effects for the heading section */}
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
             <h2 className="text-3xl font-bold tracking-tighter text-gray-900 sm:text-4xl md:text-5xl">Key Features</h2>
@@ -101,7 +85,6 @@ export function FeaturesSection() {
               icon={feature.icon}
               title={feature.title}
               description={feature.description}
-              index={index}
             />
           ))}
         </div>

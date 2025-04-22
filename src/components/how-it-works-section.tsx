@@ -56,11 +56,11 @@ export function HowItWorksSection() {
       <div className="container px-4 md:px-6">
         <motion.div className="flex flex-col items-center justify-center space-y-4 text-center" variants={itemVariants}>
           <div className="space-y-2">
-            <motion.h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl" variants={itemVariants}>
+            <motion.h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-black" variants={itemVariants}>
               How It Works
             </motion.h2>
             <motion.p
-              className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed"
+              className="max-w-[900px]  md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed text-black"
               variants={itemVariants}
             >
               Simple steps to enhance your exam preparation
@@ -79,14 +79,14 @@ export function HowItWorksSection() {
               custom={index}
             >
               <motion.div
-                className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-white"
+                className="flex h-12 w-12 items-center justify-center rounded-full bg-black text-white"
                 whileHover={{ scale: 1.1 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
                 {step.number}
               </motion.div>
               <h3 className="text-xl font-bold">{step.title}</h3>
-              <p className="text-muted-foreground">{step.description}</p>
+              <p className="text-black">{step.description}</p>
             </motion.div>
           ))}
         </motion.div>
