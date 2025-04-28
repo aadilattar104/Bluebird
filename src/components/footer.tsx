@@ -17,16 +17,16 @@ export function Footer() {
       <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
         <div className="flex items-center gap-2">
           <Plane className="h-5 w-5 text-primary" />
-          <p className="text-sm text-muted-foreground">© 2024 Bluebird Edu. All rights reserved.</p>
+          <p className="text-sm text-black">© 2024 Bluebird Edu. All rights reserved.</p>
         </div>
         <div className="flex gap-4">
-          <Button variant="ghost" className="text-sm font-medium" asChild>
+          <Button variant="ghost" className="text-black font-medium" asChild>
             <Link href="/privacy">Privacy Policy</Link>
           </Button>
-          <Button variant="ghost" className="text-sm font-medium" asChild>
+          <Button variant="ghost" className="text-black font-medium" asChild>
             <Link href="/terms">Terms of Service</Link>
           </Button>
-          <Button variant="ghost" className="text-sm font-medium" asChild>
+          <Button variant="ghost" className="text-black font-medium" asChild>
             <Link href="/contact">Contact</Link>
           </Button>
         </div>

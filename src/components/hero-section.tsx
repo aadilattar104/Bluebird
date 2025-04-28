@@ -8,7 +8,7 @@ import Image from "next/image"
 import { TypeAnimation } from "react-type-animation"
 import { useMagneticHover } from "./hooks/use-magnetic-hover"
 // Import your image if it's in the components directory
-import cockpitImage from "@/components/images/cockpit2.jpg"
+import cockpitImage from "@/components/images/cockpit8.webp"
 
 export function HeroSection() {
   const containerRef = useRef(null)
