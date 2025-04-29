@@ -17,10 +17,10 @@ export default function Home() {
       <Header />
       <main>
         <HeroSection />
+        <AboutSection />
         <FeaturesSection />
         <HowItWorksSection />
         <PricingSection />
-        <AboutSection />
         <CTASection />
       </main>
       <Footer />

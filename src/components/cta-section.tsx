@@ -10,9 +10,9 @@ export function CTASection() {
   const isInView = useInView(sectionRef, { once: false, amount: 0.3 })
 
   return (
-    <motion.section
-      ref={sectionRef}
-      className="w-full py-12 md:py-24 lg:py-32 bg-black text-white relative overflow-hidden"
+    <motion.section 
+      ref={sectionRef} 
+      className="w-full py-12 md:py-24 lg:py-32 bg-black text-white relative overflow-hidden" 
       id="cta"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
@@ -20,32 +20,30 @@ export function CTASection() {
       viewport={{ once: true }}
     >
       {/* Airplane Animation */}
-      <motion.div
-        className="absolute left-0 top-0 w-full h-full overflow-hidden pointer-events-none"
+      <motion.div 
+        className="absolute left-0 top-0 w-full h-full overflow-hidden pointer-events-none" 
         initial={{ opacity: 0 }}
         animate={{ opacity: isInView ? 1 : 0 }}
         transition={{ duration: 0.5 }}
       >
         <motion.div
-          className="text-white"
-          initial={{
-            x: "-5%",
-            y: "80%",
-            opacity: 0,
+          className="absolute bottom-0 left-0"
+          style={{ bottom: "10%", left: "-5%" }}
+          initial={{ opacity: 0 }}
+          animate={{ 
+            x: "110vw", 
+            y: "-100vh", 
+            opacity: [0, 1, 1, 0],
+            rotate: 20
           }}
-          animate={{
-            x: "105%",
-            y: "5%",
-            opacity: [0, 1, 0.8, 0],
-          }}
-          transition={{
-            duration: 8,
-            ease: "easeInOut",
-            repeat: Number.POSITIVE_INFINITY,
-            repeatDelay: 2,
+          transition={{ 
+            duration: 8, 
+            ease: "easeInOut", 
+            repeat: Infinity, 
+            repeatDelay: 2 
           }}
         >
-          <Plane size={40} className="rotate-[30deg] text-white" />
+          <Plane size={48} className="text-white" />
         </motion.div>
       </motion.div>
 

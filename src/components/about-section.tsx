@@ -3,8 +3,7 @@
 import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
 import Image from "next/image"
-// Import your pilot image if it's in the components directory
-import pilotImage from "@/components/images/pilot.jpg" // Update this path based on your actual filename
+import pilotImage from "@/components/images/pilot.jpg" // Adjust path if needed
 
 export function AboutSection() {
   const sectionRef = useRef(null)
@@ -43,8 +42,27 @@ export function AboutSection() {
     >
       <div className="container px-4 md:px-6 relative z-10">
         <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
-          {/* Left side - About text */}
-          <motion.div className="flex flex-col justify-center space-y-4" variants={itemVariants}>
+          
+          {/* Left side - Pilot image */}
+          <motion.div 
+            className="relative h-[400px] lg:h-[500px] rounded-lg overflow-hidden shadow-xl order-1 lg:order-1"
+            variants={itemVariants}
+          >
+            <Image
+              src={pilotImage}
+              alt="Professional Pilot"
+              fill
+              className="object-cover"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+          </motion.div>
+
+          {/* Right side - About text */}
+          <motion.div 
+            className="flex flex-col justify-center space-y-4 order-2 lg:order-2"
+            variants={itemVariants}
+          >
             <div className="space-y-2">
               <motion.h2
                 className="text-3xl text-black font-bold tracking-tighter sm:text-4xl md:text-5xl"
@@ -68,22 +86,6 @@ export function AboutSection() {
                 goal is to make exam preparation efficient, effective, and accessible for all aviation professionals.
               </motion.p>
             </div>
-          </motion.div>
-          
-          {/* Right side - Pilot image */}
-          <motion.div 
-            className="relative h-[400px] lg:h-[500px] rounded-lg overflow-hidden shadow-xl"
-            variants={itemVariants}
-          >
-            <Image
-              src={pilotImage} // Or "/pilot.jpg" if in public folder
-              alt="Professional Pilot"
-              fill
-              className="object-cover"
-              priority
-            />
-            {/* Optional overlay gradient for better integration with background */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
           </motion.div>
         </div>
       </div>
