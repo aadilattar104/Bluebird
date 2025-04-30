@@ -3,7 +3,7 @@
 import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
 import Image from "next/image"
-import pilotImage from "@/components/images/pilot.jpg" // Adjust path if needed
+import pilotImage from "@/components/images/pilot.svg" // Adjust path if needed
 
 export function AboutSection() {
   const sectionRef = useRef(null)

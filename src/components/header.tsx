@@ -50,25 +50,25 @@ export function Header() {
         <div className="flex gap-6 md:gap-10">
           <Link href="#" className="flex items-center space-x-2">
 
-            <span className="inline-block text-black text-3xl font-bold">Bluebird Edu</span>
+            <span className="inline-block text-black text-3xl font-serif">Bluebird Edu</span>
           </Link>
         </div>
         <div className="flex flex-1 items-center justify-end space-x-4">
           <nav className="flex items-center space-x-1">
-            <Button variant="ghost" className="text-black font-medium" onClick={scrollToSection("features")}>
+            <Button variant="ghost" className="text-black font-normal " onClick={scrollToSection("features")}>
               Features
             </Button>
-            <Button variant="ghost" className="text-black font-medium" onClick={scrollToSection("how-it-works")}>
+            <Button variant="ghost" className="text-black font-normal " onClick={scrollToSection("how-it-works")}>
               How It Works
             </Button>
-            <Button variant="ghost" className="text-black font-medium" onClick={scrollToSection("pricing")}>
+            <Button variant="ghost" className="text-black font-normal " onClick={scrollToSection("pricing")}>
               Pricing
             </Button>
-            <Button variant="ghost" className="text-black font-medium" onClick={scrollToSection("about")}>
+            <Button variant="ghost" className="text-black font-normal " onClick={scrollToSection("about")}>
               About
             </Button>
             <div ref={getStartedRef}>
-              <Button variant="default" className="text-sm font-medium relative z-10" asChild>
+              <Button variant="default" className="text-sm bg-black text-white font-normal medium relative z-10" asChild>
                 <Link href="/dashboard">Get Started</Link>
               </Button>
             </div>
